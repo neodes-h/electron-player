@@ -1,0 +1,64 @@
+<template>
+    <div class="footer">
+        <div class="center control">
+            <button class="mdc-icon-button material-icons" id="volume">
+                <i class="fa fa-volume-up" aria-hidden="true"></i>
+            </button>
+            <div class="mdc-slider" id="volume_slider" tabindex="0" role="slider" aria-valuemax="100" aria-valuemin="0"
+                aria-valuenow="20" aria-label="Volume">
+                <div class="mdc-slider__track-container">
+                    <div class="mdc-slider__track"></div>
+                </div>
+                <div class="mdc-slider__thumb-container">
+                    <svg class="mdc-slider__thumb" width="21" height="21">
+                        <circle cx="10.5" cy="10.5" r="7.875"></circle>
+                    </svg>
+                    <div class="mdc-slider__focus-ring"></div>
+                </div>
+            </div>
+        </div>
+        <div class="center control">
+            <button class="mdc-icon-button material-icons">
+                <i class="fa fa-step-backward" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="center control">
+            <button class="mdc-icon-button material-icons">
+                <i class="fa fa-play" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="center control">
+            <button class="mdc-icon-button material-icons">
+                <i class="fa fa-step-forward" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="mdc-slider center control"
+             id="song"
+             tabindex="0"
+             role="slider" 
+             aria-valuemax="100" 
+             aria-valuemin="0" 
+             aria-valuenow="20" 
+             aria-label="Length">
+             <div class="mdc-slider__track-container">
+                <div class="mdc-slider__track"></div>
+             </div>
+            <div class="mdc-slider__thumb-container">
+                <svg class="mdc-slider__thumb" width="21" height="21">
+                    <circle cx="10.5" cy="10.5" r="7.875"></circle>
+                </svg>
+                <div class="mdc-slider__focus-ring"></div>
+            </div>
+        </div>
+        <div class="center control">
+            <button class="mdc-icon-button material-icons">
+                <i class="fa fa-random"  aria-hidden="true"></i>
+                <i class="fa fa-retweet" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+    <script>
+        require('./renderer-process/footer');
+    </script>
+</template>
+

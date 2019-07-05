@@ -8,3 +8,4 @@ function render(id){
 
 
 render('footer')
+render('header')

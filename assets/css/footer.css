@@ -1,5 +1,4 @@
 #footer_content{
-    position: fixed;
     height: 10%;
     min-height: 70px;
     width: 100%;
@@ -44,6 +43,8 @@
     position: absolute;
     transform: rotate(-90deg);
     transition: ease 0.2s;
+    -webkit-app-region: no-drag;
+    z-index: 999;
 }
 .songSlider{
     width: 100%;

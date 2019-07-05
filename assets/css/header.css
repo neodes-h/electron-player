@@ -1,0 +1,21 @@
+#header_content{
+    height: 30px;
+    width: 100%;
+    top:0;
+}
+
+.header{
+    height: 100%;
+    float: right;
+}
+
+.material-icons.md-traffic{
+    font-size: 30px;
+}
+
+.header i{
+    cursor: pointer;
+}
+.header i:hover{
+    background-color: var(--primary-color);
+}

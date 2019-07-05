@@ -1,11 +1,11 @@
-const cycleModeBtn = document.getElementById('cycle_mode');
-const volumeSlider = document.getElementById('volume');
-const volumeSliderWrapper = document.querySelector('.volumeSlider');
-const songSlider = document.getElementById('songProgress');
-const rootNode = document.querySelector('html');
-const volumeBtn = document.querySelector('.volume-btn');
-const modeBtn = document.getElementById('cycle_mode');
-const playBtn = document.getElementById('play_btn');
+const cycleModeBtn = document.getElementById('cycle_mode'),
+      volumeSlider = document.getElementById('volume'),
+      volumeSliderWrapper = document.querySelector('.volumeSlider'),
+      songSlider = document.getElementById('songProgress'),
+      rootNode = document.querySelector('html'),
+      volumeBtn = document.querySelector('.volume-btn'),
+      modeBtn = document.getElementById('cycle_mode'),
+      playBtn = document.getElementById('play_btn');
 
 
 //init global parameters

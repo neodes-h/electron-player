@@ -1,46 +1,111 @@
+@import url("../css/range.css");
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url('../../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2') format('woff2'),
+    url('../../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff') format('woff'),
+    url('../../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.material-icons.md-footer{
+    font-size: 32px;
+}
+
+:root {
+    --primary-color: rgba(24, 19, 19, 0.8);
+    --secondary-color: rgba(36, 151, 227,1);
+    --mdc-theme-background: #fff;
+  }
 body{
     margin: 0;
 }
 
-:root {
-    --mdc-theme-primary: #9c27b0;
-    --mdc-theme-secondary: #ffab40;
-    --mdc-theme-background: #fff;
-  }
-
 .hide{
     visibility: hidden !important;
     opacity: 0 !important;
+    /* display: none !important; */
 }
 
-.mdc-icon-button:not(.mdc-ripple-upgraded):focus::before, .mdc-icon-button.mdc-ripple-upgraded--background-focused::before{
-    opacity: 0;
-}
 
-#footer_content{
-    position: fixed;
-    height: 10%;
-    min-height: 70px;
-    width: 100%;
-    bottom: 0;
-}
-
-.footer{
-    display: flex;
-    height: 100%;
-    background-color: rgba(24, 19, 19, 0.8);
-    color: white;
-}
-
-.footer>div{
-    flex: 1;
-}
-.footer>div:nth-child(4){
-    flex: 5;
-}
-
-.control.center{
-    align-self: center;
-    display: flex;
+button {
+    background: none;
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    font-weight: 500;
+    vertical-align: middle;
+    margin: 5px;
+    
+}
+
+button:hover {
+    color: var(--primary-color);
+}
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+.ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .2s, opacity 1s;
+}
+
+.ripple:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
 }

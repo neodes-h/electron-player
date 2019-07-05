@@ -1,3 +1,53 @@
-body{
+#footer_content{
+    position: fixed;
+    height: 10%;
+    min-height: 70px;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer{
+    display: flex;
+    height: 100%;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.footer>div{
+    flex: 1;
+}
+.footer>div:nth-child(5){
+    flex: 5;
+    height: unset;
+}
+
+.control.center{
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.control.center>button{
+    flex:1;
     margin: 0;
+    padding: 0;
+}
+
+.control.center:not(.songSlider):hover{
+    background-color: rgba(24, 19, 19, 0.2);
+}
+
+.volumeSlider{
+    width: 90px;
+    bottom: 75px;
+    position: absolute;
+    transform: rotate(-90deg);
+    transition: ease 0.2s;
+}
+.songSlider{
+    width: 100%;
+}
+#songProgress{
+    background: none;
 }

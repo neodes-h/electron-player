@@ -2,8 +2,15 @@ body{
     margin: 0;
 }
 
+:root {
+    --mdc-theme-primary: #9c27b0;
+    --mdc-theme-secondary: #ffab40;
+    --mdc-theme-background: #fff;
+  }
+
 .hide{
-    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
 }
 
 .mdc-icon-button:not(.mdc-ripple-upgraded):focus::before, .mdc-icon-button.mdc-ripple-upgraded--background-focused::before{
@@ -28,7 +35,7 @@ body{
 .footer>div{
     flex: 1;
 }
-.footer>div:nth-child(5){
+.footer>div:nth-child(4){
     flex: 5;
 }
 
@@ -36,12 +43,4 @@ body{
     align-self: center;
     display: flex;
     justify-content: center;
-}
-
-#volume_slider{
-    width: 100px;
-    bottom: 85px;
-    background: rgba(24, 19, 19, 0.8);
-    position: absolute;
-    left: 5px;
 }

@@ -51,7 +51,10 @@ body{
 .hide{
     visibility: hidden !important;
     opacity: 0 !important;
-    /* display: none !important; */
+}
+
+.remove{
+    display: none !important;
 }
 
 

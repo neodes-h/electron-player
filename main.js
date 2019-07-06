@@ -1,6 +1,7 @@
 const electron = require('electron');
 const {app,BrowserWindow} = electron;
 const path = require('path');
+const glob = require('glob');
 
 let win = null;
 
@@ -41,6 +42,11 @@ function initApp(){
     app.on('ready', createMainWindow);
     app.on('quit', () => {
         app.quit();
+    })
+
+    // require every js module in main-process folder
+    glob.sync(path.join(__dirname, '/main-process/**/*.js')).forEach((item)=>{
+        require(item);
     })
 }
 

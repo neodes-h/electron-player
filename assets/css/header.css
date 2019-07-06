@@ -23,6 +23,7 @@
 }
 .traffic-light{
     float: right;
+    -webkit-app-region:no-drag;
 }
 .material-icons.md-traffic{
     font-size: 30px;

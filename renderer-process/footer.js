@@ -1,3 +1,5 @@
+const {ipcRenderer} = require('electron');
+
 const cycleModeBtn = document.getElementById('cycle_mode'),
       volumeSlider = document.getElementById('volume'),
       volumeSliderWrapper = document.querySelector('.volumeSlider'),
@@ -5,7 +7,8 @@ const cycleModeBtn = document.getElementById('cycle_mode'),
       rootNode = document.querySelector('html'),
       volumeBtn = document.querySelector('.volume-btn'),
       modeBtn = document.getElementById('cycle_mode'),
-      playBtn = document.getElementById('play_btn');
+      playBtn = document.getElementById('play_btn'),
+      playlistBtn = document.getElementById('playlist');
 
 
 //init global parameters
@@ -97,6 +100,14 @@ function init(){
             document.querySelector('.play').classList.add('remove');
             document.querySelector('.pause').classList.remove('remove');
         }
+    })
+
+    //logics of playlist
+    playlistBtn.addEventListener('click',(event)=>{
+        ipcRenderer.send('openPlaylist');
+        ipcRenderer.on('replyPlaylist',(events,...args)=>{
+            //get data from server asynchronously
+        })
     })
 }
 

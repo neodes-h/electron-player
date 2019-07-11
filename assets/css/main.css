@@ -97,6 +97,18 @@ button:hover {
 .content_content{
     width: 100%;
     height: 100%;
+    display: flex;
     -webkit-app-region:drag;
     background:linear-gradient(rgba(24, 19, 19, 0.9) 0%, var(--background-color) 80%);
+}
+
+#brief_content{
+    height: 100%;
+    flex: 6;
+    background-color: red;
+}
+#playlist_content{
+    flex: 4;
+    height:100%;
+    background-color: blue;
 }

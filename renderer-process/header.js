@@ -3,7 +3,7 @@ const closeBtn = document.getElementById('close'),
       minimizeBtn = document.getElementById('minimize');
 
 closeBtn.addEventListener('click',()=>{
-    remote.app.quit();
+    remote.getCurrentWindow().close();
 })
 
 minimizeBtn.addEventListener('click',()=>{

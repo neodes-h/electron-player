@@ -33,7 +33,7 @@ function initApp(){
                 nodeIntegration: true,
             }
         })
-        win.loadURL(path.join('file://', __dirname, 'index.html'));
+        win.loadURL(path.join('file://', __dirname, 'sections/index.html'));
 
         win.on('closed', () => {
             win = null;

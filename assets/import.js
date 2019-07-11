@@ -1,6 +1,6 @@
 function render(id){
-    let footer = document.getElementById(id + '_import');
-    let content = footer.import.querySelector('template');
+    let import_element = document.getElementById(id + '_import');
+    let content = import_element.import.querySelector('template');
     let node = document.importNode(content.content, true);
 
     document.getElementById(id + '_content').appendChild(node);
@@ -9,3 +9,5 @@ function render(id){
 
 render('footer')
 render('header')
+render('playlist')
+

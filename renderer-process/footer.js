@@ -102,13 +102,16 @@ function init(){
         }
     })
 
-    //logics of playlist
-    playlistBtn.addEventListener('click',(event)=>{
-        ipcRenderer.send('openPlaylist');
-        ipcRenderer.on('replyPlaylist',(events,...args)=>{
-            //get data from server asynchronously
-        })
-    })
+
+    // ipcRenderer.on('replyPlaylist', (events, {data}) => {
+    //     //get data from server asynchronously
+    //     console.log(data);
+
+    // })
+    // //logics of playlist
+    // playlistBtn.addEventListener('click',(event)=>{
+    //     ipcRenderer.send('openPlaylist');
+    // })
 }
 
 init();

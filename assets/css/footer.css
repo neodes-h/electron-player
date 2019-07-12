@@ -52,3 +52,6 @@
 #songProgress{
     background: none;
 }
+#video_controller{
+    display: none;
+}

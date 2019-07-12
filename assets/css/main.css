@@ -1,13 +1,23 @@
 @import url("../css/range.css");
 
+/* customize scrollbar */
+
+::-webkit-scrollbar{
+    background-color: var(--background-color);
+    border-radius: 30px;
+    width: 5px;
+    cursor: pointer; /* not working due to chromium kernal */
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 30px;
+    background-color: #e1e1e1;
+    cursor: pointer;/* not working due to chromium kernal */
+}
+
 :root {
     --primary-color: rgba(24, 19, 19, 0.8);
     --secondary-color: rgba(36, 151, 227,1);
     --background-color: rgba(34, 33, 38, 1);
-}
-
-.playlist table{
-    font-size: 13px;
 }
 
 table,thead,tbody{
@@ -18,27 +28,11 @@ tr,th,td{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    padding: 0;
 }
 tr{
     width: 100%;
 }
-.playlist th:nth-of-type(1),
-.playlist td:nth-of-type(1){
-    width:10%;
-    text-align: center;
-}
-
-.playlist th:nth-of-type(2),
-.playlist td:nth-of-type(2){
-    width:54%;
-}
-
-.playlist th:nth-of-type(3),
-.playlist td:nth-of-type(3){
-    text-align: center;
-    width: 30%;
-}
-
 body{
     margin: 0;
     width: 100%;
@@ -47,6 +41,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 html{
@@ -68,7 +63,6 @@ html{
 .remove{
     display: none !important;
 }
-
 
 button {
     background: none;
@@ -131,8 +125,7 @@ button:hover {
 .content_content{
     width: 100%;
     height: 100%;
-    /* display: flex; */
-    display: inherit;
+    display: flex;
     /* -webkit-app-region:drag; */
     overflow-wrap: break-word;
     background:linear-gradient(rgba(24, 19, 19, 0.9) 0%, var(--background-color) 80%);
@@ -143,12 +136,10 @@ button:hover {
     /* flex: 66.5;
     flex-basis: 65%; */
     width: 65%;
-    background-color: red;
 }
 #playlist_content{
-    /* flex: 3.5;
-    flex-basis: 35%; */
     width: 35%;
     height:100%;
-    background-color: blue;
+    color: #e1e1e1;
+    overflow: auto;
 }

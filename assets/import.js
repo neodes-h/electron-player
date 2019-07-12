@@ -10,4 +10,5 @@ function render(id){
 render('footer')
 render('header')
 render('playlist')
+render('brief')
 

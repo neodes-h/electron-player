@@ -1,14 +1,45 @@
-@keyframes rowup {
+.playlist table{
+    font-size: 13px;
+}
+.playlist tr{
+    margin: 3px 0;
+}
+.playlist td label{
+    display: inline-block;
+    cursor: pointer;
+}
+.playlist th:nth-of-type(1),
+.playlist td:nth-of-type(1){
+    width:10%;
+    text-align: center;
+}
+
+.playlist th:nth-of-type(2),
+.playlist td:nth-of-type(2){
+    width: 65%;
+}
+
+.playlist th:nth-of-type(3),
+.playlist td:nth-of-type(3){
+    text-align: center;
+    width: 20%;
+    float: right;
+}
+
+@keyframes cycle {
     0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
     }
     100% {
-        -webkit-transform: translate3d(-50%, 0, 0);
-        transform: translate3d(-50%, 0, 0);
+        -webkit-transform: translate(calc(20px - 100%), 0);
+        transform: translate(calc(20px - 100%), 0);
     }
 }
-.playlist td:nth-of-type(2) div{
-    -webkit-animation: 5s rowup linear infinite normal;
-    animation: 5s rowup linear infinite normal;
+.cycle{
+    display: inline-flex !important;
+    -webkit-animation: 5s cycle ease-in-out infinite normal;
+    animation: 5s cycle ease-in-out infinite normal;
+    animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
 }

@@ -4,11 +4,11 @@ function init(){
 
     document.getElementById('minimize').remove();
     ipcRenderer.on('dataResponse', (event, { data }) => {
-        Array.from(data).forEach((item)=>{
-            let ele = document.createElement('p');
-            ele.innerHTML = JSON.stringify(item);
-            contentDOM.appendChild(ele);
-        })
+        // Array.from(data).forEach((item)=>{
+        //     let ele = document.createElement('div');
+        //     ele.innerHTML = JSON.stringify(item);
+        //     contentDOM.appendChild(ele);
+        // })
     });
 
 }

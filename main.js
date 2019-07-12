@@ -25,6 +25,7 @@ function initApp(){
             height: 600,
             maxHeight:600,
             frame:false,
+            resizable: false,
             title: 'Music Player',
             icon: path.join(__dirname, 'assets/image/icon.png'),
             fullscreenable: false,

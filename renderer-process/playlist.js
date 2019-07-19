@@ -13,11 +13,9 @@ function textCycleHandler(ele){
     ele.addEventListener('click',()=>{
         ipcRenderer.send('songClicked',ele.dataset['id']||undefined);
     })
-
 }
 
 function init(){
-
     document.getElementById('minimize').remove();
     ipcRenderer.on('dataResponse', (event, { data }) => {
         //assemble the playlist table

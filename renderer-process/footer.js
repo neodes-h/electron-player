@@ -1,6 +1,8 @@
 const {ipcRenderer} = require('electron');
+const {Session} = require('../main-process/session');
 
-const cycleModeBtn = document.getElementById('cycle_mode'),
+const session = Session.getInstance(),
+      cycleModeBtn = document.getElementById('cycle_mode'),
       volumeSlider = document.getElementById('volume'),
       volumeSliderWrapper = document.querySelector('.volumeSlider'),
       songSlider = document.getElementById('songProgress'),
@@ -13,18 +15,40 @@ const cycleModeBtn = document.getElementById('cycle_mode'),
 
 //init global parameters
 let obj = {
-    cur_vol:50,
-    mute_flag:false,
-    cur_pos:0,
-    cycle_mode:0,//0:random,1: repeat,2: repeat once
-    pause:false
+    mute_flag:session.volume == 0,
 }
+
+Object.defineProperties(obj,{
+        'cur_vol':{
+            get:()=>session.volume || 0,
+            set:(newValue)=>{
+                session.volume = Number.parseInt(newValue);
+            }
+        }, 'cur_pos': {
+            get: () => session.position || 0,
+            set: (newValue) => {
+                session.position = Number.parseFloat(newValue);
+            }
+        }, 'cycle_mode': {//0:random,1: repeat,2: repeat once
+            get: () => session.playingMode || 0,
+            set: (newValue) => {
+                session.playingMode = newValue;
+            }
+        }, 'pause': {
+            get: () => !session.playing || false,
+            set: (newValue) => {
+                session.playing = !!!newValue;
+            }
+        },
+        
+    });
 
 function init(){
     // logics of volume slider control
     function volumeSliderHandler(event) {
         rootNode.style.setProperty('--volume-slider-left', event.target.value + '%');
         obj.cur_vol = event.target.value;
+        // session.volume = Number.parseInt(obj.cur_vol);
 
         if (obj.cur_vol > 0) {
             document.querySelector('#volume_off').classList.add('remove');

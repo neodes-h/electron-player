@@ -2,10 +2,47 @@
     height: 100%;
 }
 .desc{
-    background-color: blue;
-    height: 100%;
+    color: #e1e1e1;
+    height: 150px;
+    padding:10px;
+    display: flex;
+    position: relative;
 }
 .lyric{
     background-color: green;
     height: 100%;
+}
+.desc img{
+    height: 100%;
+    width: 150px;
+}
+.desc img+div{
+    margin-left: 10px;
+    display: table;
+    height: 100%;
+    overflow: hidden;
+}
+.desc .bold{
+    font-weight: bold;
+}
+.desc .font-22{
+    font-size: 22px;
+}
+.desc .tr{
+    display: table-row;
+}
+.desc .td{
+    display: table-cell;
+    font-size: 14px;
+}
+.brief_box{
+    height: 100%;
+    display: table;
+    padding-top: 20px;
+}
+
+.lyric ul{
+    display: block;
+    height: 60%;
+    overflow: auto;
 }

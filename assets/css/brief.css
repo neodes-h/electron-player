@@ -1,5 +1,6 @@
 .brief{
     height: 100%;
+    overflow: hidden;
 }
 .desc{
     color: #e1e1e1;
@@ -9,8 +10,9 @@
     position: relative;
 }
 .lyric{
-    background-color: green;
     height: 100%;
+    overflow: hidden;
+    padding:0 10px;
 }
 .desc img{
     height: 100%;
@@ -40,9 +42,39 @@
     display: table;
     padding-top: 20px;
 }
-
-.lyric ul{
-    display: block;
-    height: 60%;
+.lyric .ul{
+    display: inline-block;
+    height: 66%;
     overflow: auto;
+    margin: 0;
+    color: white;
+    width: 100%;
+    opacity: 0.6;
+    cursor: default;
+    padding: 5px 0 0 0;
 }
+.lyric .ul p{
+    font-size: 20px;
+}
+/* 
+.lyric .li{
+    height: 25px;
+    font-size: 20px;
+    padding-top: 5px;
+    display: inline-flex;
+    width: 100%;
+    overflow: auto;
+    margin-right: 5px;
+    justify-content: center;
+}
+
+@keyframes lyric-cycle{
+    0%{
+        transform:translate(100px,0);
+        -webkit-transform: translate(100px, 0);
+    }
+    100%{
+        transform: translate(calc(-100px - 100%),0);
+        -webkit-transform: translate(calc(-100px - 100%),0);
+    }
+} */

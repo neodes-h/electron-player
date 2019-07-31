@@ -1,0 +1,21 @@
+/* customize scrollbar */
+
+::-webkit-scrollbar{
+    background-color: var(--background-color);
+    border-radius: 30px;
+    width: 5px;
+    cursor: pointer; /* not working due to chromium kernal */
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 30px;
+    background-color: #e1e1e1;
+    cursor: pointer;/* not working due to chromium kernal */
+}
+
+/* hide scrollbar in lyric section */
+/* div.lyric ::-webkit-scrollbar{
+    display: none;
+}
+div.lyric ::-webkit-scrollbar-thumb{
+    display: none;
+} */

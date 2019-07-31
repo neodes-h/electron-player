@@ -65,6 +65,7 @@ let data = [
         songWriter: 'Song Writer1',
     },
 ]
+
 ipcMain.on('dataRequest', (event) => {
     //parse song data
     event.reply('dataResponse', { 'data': data });

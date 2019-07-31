@@ -6,14 +6,19 @@ var session = Session.getInstance();
 var desc = document.querySelector('.desc'),
     lyric = document.querySelector('.lyric');
 ipcRenderer.on('responseLyrics',function(event,data){
-    var ul = document.createElement('ul'),
-        li;
-    Array.from(data).forEach(item =>{
-        li = document.createElement('li');
-        li.innerHTML = JSON.stringify(item);
-        ul.appendChild(li);
+    var container = document.createElement('div'),
+        p;
+    container.classList.add('ul');
+    Array.from(data).forEach((item,index) =>{
+        p = document.createElement('p');
+        p.innerHTML = item;
+        container.appendChild(p);
     })
-    lyric.appendChild(ul);
+    // empty DOM
+    while(lyric.firstChild){
+        lyric.removeChild(lyric.firstChild);
+    }
+    lyric.appendChild(container);
 })
 ipcRenderer.on('showBrief', function (event, data) {
     data = JSON.parse(data);

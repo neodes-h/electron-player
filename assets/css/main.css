@@ -1,18 +1,5 @@
 @import url("../css/range.css");
-
-/* customize scrollbar */
-
-::-webkit-scrollbar{
-    background-color: var(--background-color);
-    border-radius: 30px;
-    width: 5px;
-    cursor: pointer; /* not working due to chromium kernal */
-}
-::-webkit-scrollbar-thumb{
-    border-radius: 30px;
-    background-color: #e1e1e1;
-    cursor: pointer;/* not working due to chromium kernal */
-}
+@import url("../css/scrollbar.css");
 
 :root {
     --primary-color: rgba(24, 19, 19, 0.8);
